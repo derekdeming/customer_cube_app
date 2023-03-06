@@ -1,0 +1,33 @@
+api-version: 2019-12-01
+location: centralus
+name: swiredevopsera
+properties:
+  containers:
+    - name: streamlitapp
+      properties:
+        image: swiredevopsera.azurecr.io/customer_cube_app:v1
+        ports:
+          - port: 80
+            protocol: TCP
+          - port: 443
+            protocol: TCP
+        resources:
+          requests:
+            cpu: 2.0
+            memoryInGB: 1.5
+  imageRegistryCredentials:
+    - server: swiredevopsera.azurecr.io
+      username: swiredevopsera
+      password: 8eP/rtppsKUNQt9QiyZsTx65P3b60+z3CNfRZLyUs8+ACRCCjj5d
+  restartPolicy: Never
+  ipAddress:
+    ports:
+      - port: 443
+        protocol: TCP
+      - port: 80
+        protocol: TCP
+    type: Public
+    dnsNameLabel: swiredevopsera
+  osType: Linux
+tags: null
+type: Microsoft.ContainerInstance/containerGroups

@@ -1,0 +1,13 @@
+name: customer_cube_app
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.8.11
+  - pip
+  - pip:
+      - streamlit
+      - plotly
+      - numpy
+      - matplotlib
+      - pandas
